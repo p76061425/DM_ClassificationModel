@@ -114,3 +114,5 @@ site
 
 # mypy
 .mypy_cache
+
+.docx
