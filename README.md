@@ -71,20 +71,19 @@ $ python3 data_generator.py [-h]
   * Accuracy = 0.9997
   * Precision = 0.9999826689774697
   * Recall = 0.9999677377726158
-
-
+---
 * 從結果圖可以得知，與Absolutely Right Rules相比，Decision tree所建立出的model和實際的rules並非完全相同，但有很高的相似度，由於Absolutely Right Rules的規則很簡單，因此結果的Accuracy, Precision, Recall均有相當好的表現。
 
 
 
 # Support Vector Machine
+* Penalty C: 1.0
+* Cross Validate: 10
 
-* Svm kernel : rbf
-* Penalty C : 1.0
-* Cross Validate : 10
+## Kernel : rbf
 
+###  Cross Validation Result:
 
-## Cross Validation Result:
 |CV No.| Accuracy  | Percision | Recall   | Accuracy  | Percision | Recall    |
 |---   |---        |---        |---       |---        |---        |---        |
 |Type  | Train     | Train     | Train    | Test      | Test      | Test      |
@@ -101,8 +100,62 @@ $ python3 data_generator.py [-h]
 | avg  |  0.9970   |  0.9977   |  0.9979  |  0.9961   |  0.9972   |  0.9972   |
 
 
-## Testing Result:
+###  Testing Result:
   * Accuracy: 0.9969
   * Precision: 0.9976627899295014
   * Recall: 0.9977905324777975
-  * 從結果可以看到，用Support Vector Machine進行分類的效果也非常好，但在簡單的規則下所定義出的data，用Decision Tree這種簡單的model反而效果還要比用SVM來得更好，因此要視問題來決定model，而不是一昧的使用特定的model來解決問題。
+---
+
+## Kernel: sigmoid
+
+
+## Cross Validation Result:
+|CV No.| Accuracy  | Percision | Recall   | Accuracy  | Percision | Recall    |
+|---   |---        |---        |---       |---        |---        |---        |
+|Type  | Train     | Train     | Train    | Test      | Test      | Test      |
+| cv0  |  0.6478   |  0.6150   |  0.6020  |  0.6507   |  0.6169   |  0.6125   |
+| cv1  |  0.6443   |  0.6152   |  0.5984  |  0.6687   |  0.6406   |  0.6432   |
+| cv2  |  0.6568   |  0.6282   |  0.6147  |  0.6687   |  0.6398   |  0.6319   |
+| cv3  |  0.6545   |  0.6308   |  0.6137  |  0.6194   |  0.5878   |  0.5671   |
+| cv4  |  0.6461   |  0.6201   |  0.5991  |  0.6670   |  0.6313   |  0.6152   |
+| cv5  |  0.6463   |  0.6214   |  0.6007  |  0.6396   |  0.6195   |  0.5945   |
+| cv6  |  0.6519   |  0.6267   |  0.6085  |  0.6176   |  0.5853   |  0.5553   |
+| cv7  |  0.6549   |  0.6289   |  0.6112  |  0.6767   |  0.6457   |  0.6284   |
+| cv8  |  0.6490   |  0.6207   |  0.6061  |  0.6423   |  0.6170   |  0.6011   |
+| cv9  |  0.6603   |  0.6299   |  0.6098  |  0.6513   |  0.6296   |  0.6088   |
+| avg  |  0.6512   |  0.6237   |  0.6064  |  0.6502   |  0.6214   |  0.6058   |
+## Testing Result:
+  * Accuracy: 0.6435
+  * Precision: 0.6204495628355513
+  * Recall: 0.6003172025937911
+
+---
+
+## Kernel: poly
+
+## Cross Validation Result:
+|CV No.| Accuracy  | Percision | Recall   | Accuracy  | Percision | Recall    |
+|---   |---        |---        |---       |---        |---        |---        |
+|Type  | Train     | Train     | Train    | Test      | Test      | Test      |
+| cv0  |  0.9617   |  0.9786   |  0.9653  |  0.9731   |  0.9850   |  0.9758   |
+| cv1  |  0.9631   |  0.9799   |  0.9663  |  0.9611   |  0.9776   |  0.9636   |
+| cv2  |  0.9615   |  0.9783   |  0.9651  |  0.9701   |  0.9826   |  0.9725   |
+| cv3  |  0.9627   |  0.9791   |  0.9662  |  0.9411   |  0.9694   |  0.9452   |
+| cv4  |  0.9617   |  0.9781   |  0.9653  |  0.9680   |  0.9844   |  0.9698   |
+| cv5  |  0.9627   |  0.9787   |  0.9661  |  0.9650   |  0.9805   |  0.9687   |
+| cv6  |  0.9637   |  0.9796   |  0.9670  |  0.9580   |  0.9785   |  0.9612   |
+| cv7  |  0.9597   |  0.9775   |  0.9633  |  0.9530   |  0.9733   |  0.9574   |
+| cv8  |  0.9619   |  0.9786   |  0.9653  |  0.9599   |  0.9743   |  0.9655   |
+| cv9  |  0.9622   |  0.9789   |  0.9656  |  0.9679   |  0.9799   |  0.9718   |
+| avg  |  0.9621   |  0.9787   |  0.9655  |  0.9617   |  0.9786   |  0.9652   |
+## Testing Result:
+  * Accuracy: 0.9607
+  * Precision: 0.978488520596513
+  * Recall: 0.9643157193348397
+
+---
+
+  * 從結果可以看到，Support Vector Machine在Kernel為rbf和poly時進行分類的效果也很不錯，而sigmoid則較差，但在簡單的規則下所定義出的data，用Decision Tree這種簡單的model反而效果還要比用SVM來得更好，因此要視問題來決定model，而不是一昧的使用特定的model來解決問題。
+
+
+
