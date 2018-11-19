@@ -109,7 +109,7 @@ $ python3 data_generator.py [-h]
 ## Kernel: sigmoid
 
 
-## Cross Validation Result:
+### Cross Validation Result:
 |CV No.| Accuracy  | Percision | Recall   | Accuracy  | Percision | Recall    |
 |---   |---        |---        |---       |---        |---        |---        |
 |Type  | Train     | Train     | Train    | Test      | Test      | Test      |
@@ -133,7 +133,7 @@ $ python3 data_generator.py [-h]
 
 ## Kernel: poly
 
-## Cross Validation Result:
+### Cross Validation Result:
 |CV No.| Accuracy  | Percision | Recall   | Accuracy  | Percision | Recall    |
 |---   |---        |---        |---       |---        |---        |---        |
 |Type  | Train     | Train     | Train    | Test      | Test      | Test      |
@@ -155,7 +155,7 @@ $ python3 data_generator.py [-h]
 
 ---
 
-  * 從結果可以看到，Support Vector Machine在Kernel為rbf和poly時進行分類的效果也很不錯，而sigmoid則較差，但在簡單的規則下所定義出的data，用Decision Tree這種簡單的model反而效果還要比用SVM來得更好，因此要視問題來決定model，而不是一昧的使用特定的model來解決問題。
+  * 從結果可以看到，Support Vector Machine在Kernel用rbf時效果最好，有最高的Accuracy、Precision及Recall，Kernel用poly時次之，而Kernel用sigmoid時則結果較差，但在簡單的規則下所定義出的data，用Decision Tree這種簡單的model反而效果還要比用SVM來得更好，因此要視問題來決定model，而不是一昧的使用特定的model來解決問題。
 
 
 
