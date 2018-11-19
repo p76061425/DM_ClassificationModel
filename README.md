@@ -43,7 +43,7 @@ $ python3 data_generator.py [-h]
 | -h, --help       | show this help message and exit |
 | -train, TRAIN_SIZE  | The number of training data you want to generate, default = 10000 |
 | --test, TEST_SIZE  | The number of testing data you want to generate, default = 10000 |
-執行後會在data資料夾內生成10000筆training data(train_data.txt)及testing data(test_data.txt)。
+* 執行後會在data資料夾內生成10000筆training data(train_data.txt)及testing data(test_data.txt)。
 
 # **Absolutely Right Rules**
 
